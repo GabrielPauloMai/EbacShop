@@ -8,28 +8,22 @@ Funcionalidade: Login na Plataforma
     Dado que estou na página de login
 
   Cenário: Login bem-sucedido
-    Quando eu inserir um usuário válido "usuario@exemplo.com"
-    E inserir uma senha válida "senha123"
+    Quando eu inserir um usuário e uma senha válidos
     E clicar no botão "login"
     Então eu devo ser redirecionado para a tela de checkout
 
-
-  Esquema do Cenário: Login bem-sucedido
-    Quando eu inserir um usuário válido "<usuario>"
-    E inserir uma senha válida "<senha>"
+  Esquema do Cenário: Login bem-sucedido com múltiplos usuários
+    Quando eu inserir um usuário "<usuario>" e uma senha "<senha>" válidos
     E clicar no botão "login"
     Então eu devo ser redirecionado para a tela de checkout
 
     Exemplos:
-      | usuario           | senha   |
-      |"teste@gmail.com"  |"Senha@123"|
-      |"teste2@gmail.com" |"Senha@123"|
-      |"teste3@gmail.com" |"Senha@123"|
+      | usuario           | senha       |
+      | teste@gmail.com   | Senha@123   |
+      | teste2@gmail.com  | Senha@123   |
+      | teste3@gmail.com  | Senha@123   |
 
   Cenário: Login com dados inválidos
-    Quando eu inserir um usuário inválido "usuario@errado.com"
-    E inserir uma senha inválida "senhaerrada"
+    Quando eu inserir um usuário ou senha inválidos
     E clicar no botão "login"
     Então eu devo ver a mensagem de alerta "Usuário ou senha inválidos"
-
-
