@@ -8,31 +8,23 @@ Funcionalidade: Configurar Produto
     Dado que estou na página de configuração de produto
 
   Cenário: Selecionar cor, tamanho e quantidade
-    Quando eu selecionar a cor "vermelho"
-    E selecionar o tamanho "M"
-    E selecionar a quantidade "2"
+    Quando eu selecionar cor, tamanho e quantidade
     E clicar no botão "adicionar ao carrinho"
-    Então o produto deve ser adicionado ao carrinho com as opções "vermelho", "M" e "2" unidades
-
+    Então o produto deve ser adicionado ao carrinho com as opções selecionadas
 
   Esquema do Cenário: Selecionar cor, tamanho e quantidade
-    Quando eu selecionar a cor "<cor>"
-    E selecionar o tamanho "<tamanho>"
-    E selecionar a quantidade "<quantidade>"
+    Quando eu selecionar cor "<cor>", tamanho "<tamanho>" e quantidade "<quantidade>"
     E clicar no botão "adicionar ao carrinho"
-Então o produto deve ser adicionado ao carrinho com as opções "<cor>", "<tamanho>" e "<quantidade>" unidades
+    Então o produto deve ser adicionado ao carrinho com as opções "<cor>", "<tamanho>" e "<quantidade>"
 
     Exemplos:
-      | cor      | tamanho | quantidade |
-      | azul     | P       | 1          |
-      | verde    | G       | 5          |
-      | amarelo  | M       | 10         |
-
+      | cor     | tamanho | quantidade |
+      | azul    | P       | 1          |
+      | verde   | G       | 5          |
+      | amarelo | M       | 10         |
 
   Cenário: Limpar seleção
-    Dado que eu selecionei a cor "azul"
-    E selecionei o tamanho "G"
-    E selecionei a quantidade "1"
+    Dado que eu fiz seleções de cor, tamanho e quantidade
     Quando eu clicar no botão "limpar"
     Então todas as seleções devem ser resetadas para o estado original
 
@@ -42,10 +34,10 @@ Então o produto deve ser adicionado ao carrinho com as opções "<cor>", "<tama
     E a mensagem "<mensagem>" deve ser exibida
 
     Exemplos:
-      | quantidade | estado          | mensagem |
-      | 1          | adicionada      |"Produto adicionado ao carrinho" |
-      | 0          | não adicionada  |"Quantidade inválida" |
-      | 10         | adicionada      |"Produto adicionado ao carrinho" |
-      | 11         | não adicionada  |"Quantidade inválida" |
-      | 100        | não adicionada  |"Quantidade inválida" |
-      |5           | adicionada      |"Produto adicionado ao carrinho" |
+      | quantidade | estado         | mensagem                         |
+      | 1          | adicionada     | "Produto adicionado ao carrinho" |
+      | 0          | não adicionada | "Quantidade inválida"            |
+      | 10         | adicionada     | "Produto adicionado ao carrinho" |
+      | 11         | não adicionada | "Quantidade inválida"            |
+      | 100        | não adicionada | "Quantidade inválida"            |
+      | 5          | adicionada     | "Produto adicionado ao carrinho" |
